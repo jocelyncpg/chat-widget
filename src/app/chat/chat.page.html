@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Chat</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Aquí comienza el widget de chat -->
+  <div class="chat-container">
+    <div class="chat-box">
+      <div *ngFor="let msg of messages" [class.user]="msg.user">
+        <p>{{ msg.text }}</p>
+      </div>
+    </div>
+    <form (ngSubmit)="sendMessage()">
+      <input type="text" [(ngModel)]="userInput" name="message" placeholder="Escribe un mensaje...">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</ion-content>
