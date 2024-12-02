@@ -1,0 +1,7 @@
+{
+  "name": "chat-widget",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
